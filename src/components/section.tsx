@@ -1,7 +1,6 @@
 import styled, { css } from 'styled-components';
 
 type SectionPropsType = {
-  color?: string;
   bgColor?: string;
   bgImageSrc?: string;
   isAlignCenter?: boolean;
@@ -9,7 +8,7 @@ type SectionPropsType = {
 };
 
 const Section = styled.section<SectionPropsType>`
-  ${({ theme, color, bgColor, bgImageSrc, isAlignCenter, isFullWindow }) => {
+  ${({ theme, bgColor, bgImageSrc, isAlignCenter, isFullWindow }) => {
     const { media, colors } = theme;
 
     return css`
@@ -17,7 +16,6 @@ const Section = styled.section<SectionPropsType>`
       width: 100%;
       padding: 50px 0;
       background-color: ${colors[bgColor] || colors['white']};
-      color: ${colors[color] || colors['black']};
 
       ${bgImageSrc &&
       css`
