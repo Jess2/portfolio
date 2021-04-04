@@ -14,6 +14,7 @@ const media = {
 const colors = {
   white: '#ffffff',
   black: '#000000',
+  night: '#0c1a2f',
 };
 const theme: DefaultTheme = {
   basicWidth: '360px',
