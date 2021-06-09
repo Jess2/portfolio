@@ -12,7 +12,8 @@ const Section = styled.section<SectionPropsType>`
     const { media, colors } = theme;
 
     return css`
-      position: relative;
+      display: flex;
+      flex-direction: column;
       width: 100%;
       padding: 50px 0;
       background-color: ${colors[bgColor] || colors['white']};

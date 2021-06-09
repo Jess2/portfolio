@@ -34,14 +34,14 @@ const StyledStickyItem = styled.div.attrs<stickyItemPropsType>(({ opacity, trans
       top: 10vh;
       width: 100%;
       height: 80%;
-      color: ${colors['white-default-2']};
+      color: ${colors['white']};
 
       h2 {
         font-size: 36px;
         font-weight: bold;
         line-height: 1.3;
         text-shadow: 0 16px 29px rgba(78, 78, 78, 0.1);
-        color: ${colors['white-default-2']};
+        color: ${colors['white']};
 
         ${media.tablet} {
           font-size: 48px;
