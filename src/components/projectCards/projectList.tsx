@@ -1,14 +1,25 @@
 import React from 'react';
+import styled from 'styled-components';
 import { ProjectCard } from './projectCard';
+import projectListData from './projectListData';
 
 export const ProjectList = () => {
   return (
-    <ul>
-      <li>
-        <ProjectCard title="프로젝트1" description="프로젝트1 설명입니다" />
-        <ProjectCard title="프로젝트2" description="프로젝트2 설명입니다" />
-        <ProjectCard title="프로젝트3" description="프로젝트3 설명입니다" />
-      </li>
-    </ul>
+    <StyledProjectList>
+      {projectListData.map((project, index) => {
+        return (
+          <li key={index}>
+            <ProjectCard imageSrc={project.imageSrc} title={project.title} description={project.description} />
+          </li>
+        );
+      })}
+    </StyledProjectList>
   );
 };
+
+const StyledProjectList = styled.ul`
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+`;
