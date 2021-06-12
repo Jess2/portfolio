@@ -12,7 +12,7 @@ const Main = () => {
     <>
       <Section bgColor="night" isAlignCenter isFullWindow>
         <H1 color="white">
-          <FadeIn>Hello world!</FadeIn>
+          <FadeIn>Hi there!</FadeIn>
           <FadeIn delay={0.3}>I&rsquo;m Soyeon Jung,</FadeIn>
           <FadeIn delay={0.6}>Frontend Developer.</FadeIn>
         </H1>
