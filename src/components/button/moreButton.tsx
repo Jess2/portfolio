@@ -1,4 +1,4 @@
-import React, { ButtonHTMLAttributes, useRef } from 'react';
+import React, { ButtonHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
 
 interface MoreButtonPropsType extends ButtonHTMLAttributes<HTMLButtonElement> {

@@ -19,7 +19,7 @@ const Main = () => {
         <MoreButton scrollTo={windowHeight}>Learn more about what I do</MoreButton>
       </Section>
       <Section bgColor="black" isAlignCenter isFullWindow>
-        <H2 color="white">MY PROJECTS</H2>
+        <H2 color="white">PROJECTS</H2>
         <ProjectList />
       </Section>
     </>

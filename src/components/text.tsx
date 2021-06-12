@@ -1,4 +1,3 @@
-import React from 'react';
 import styled, { css } from 'styled-components';
 
 type TextPropsType = {
@@ -69,7 +68,27 @@ export const H3 = styled.h3<TextPropsType>`
       }
 
       ${media.desktop} {
-        font-size: 30px;
+        font-size: 28px;
+      }
+    `;
+  }}
+`;
+
+export const H4 = styled.h4<TextPropsType>`
+  ${({ theme }) => {
+    const { media } = theme;
+
+    return css`
+      ${commonStyle};
+      font-weight: bold;
+      font-size: 18px;
+
+      ${media.tablet} {
+        font-size: 20px;
+      }
+
+      ${media.desktop} {
+        font-size: 22px;
       }
     `;
   }}
@@ -81,14 +100,14 @@ export const P = styled.p<TextPropsType>`
 
     return css`
       ${commonStyle};
-      font-size: 14px;
+      font-size: 12px;
 
       ${media.tablet} {
-        font-size: 16px;
+        font-size: 14px;
       }
 
       ${media.desktop} {
-        font-size: 20px;
+        font-size: 16px;
       }
     `;
   }}

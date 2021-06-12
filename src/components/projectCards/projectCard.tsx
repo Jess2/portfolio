@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import { H3, P } from '../text';
+import { H4, P } from '../text';
 
 type projectCardType = {
   imageSrc?: string;
@@ -10,32 +10,70 @@ type projectCardType = {
 
 export const ProjectCard = ({ imageSrc, title, description }: projectCardType) => {
   return (
-    <StyledCard>
-      {imageSrc && <img src={imageSrc} alt="Project Image" />}
-      {!imageSrc && <img src="/favicon.ico" alt="Project Image" />}
-      <H3 color="white">{title}</H3>
-      <P color="white">{description}</P>
-    </StyledCard>
+    <S.Card>
+      <S.CardImg imageSrc={imageSrc || '/favicon.ico'} />
+      <S.CardText>
+        <H4 color="white">{title}</H4>
+        <P color="white" dangerouslySetInnerHTML={{ __html: description }} />
+      </S.CardText>
+    </S.Card>
   );
 };
 
-const StyledCard = styled.div`
-  ${({ theme }) => {
-    const { media, colors } = theme;
+const S = {
+  Card: styled.div`
+    ${({ theme }) => {
+      const { colors } = theme;
 
-    return css`
-      display: inline-block;
-      box-shadow: 0 0 10px ${colors['white']};
-      border-radius: 10px;
-      padding: 10px;
-      width: 300px;
-      height: 400px;
-      color: ${colors['white']};
-      margin: 2em;
+      return css`
+        display: inline-block;
+        border-radius: 30px;
+        width: 300px;
+        height: 400px;
+        margin: 2em 1em;
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.2s;
 
-      > img {
+        &:hover {
+          transform: translateY(-20px);
+          box-shadow: 0 9px 24px 0 ${colors['gray500']};
+        }
+      `;
+    }}
+  `,
+  CardImg: styled.div<{ imageSrc: string }>`
+    ${({ theme, imageSrc }) => {
+      const { colors } = theme;
+
+      return css`
+        background-image: url(${imageSrc});
+        background-color: ${colors['gray900']};
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
         width: 100%;
-      }
-    `;
-  }}
-`;
+        height: 180px;
+      `;
+    }}
+  `,
+  CardText: styled.div`
+    ${({ theme }) => {
+      const { colors } = theme;
+
+      return css`
+        padding: 1.2em 1em;
+        height: calc(100% - 180px);
+        background-color: ${colors['gray100']};
+
+        * {
+          color: ${colors['black']};
+        }
+
+        ${H4} {
+          padding-bottom: 0.4em;
+        }
+      `;
+    }}
+  `,
+};

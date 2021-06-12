@@ -95,13 +95,11 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   a {
-    color: #fff;
     text-decoration: none;
     outline: none;
 
     &:hover, &:active {
       text-decoration: none;
-      color:#fff;
     }
   }
 `;
